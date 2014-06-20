@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<decorators defaultdir="/WEB-INF/layouts/">
+<decorators defaultdir="/WEB-INF/ftl/layouts/">
 	<excludes>
 		<pattern>/static/*</pattern>
 		<pattern>/api/*</pattern>
+
+        <pattern>/login</pattern>
 	</excludes>
 	
-	<decorator name="default" page="default.jsp">
+	<decorator name="default" page="default.ftl">
 		<pattern>/*</pattern>
 	</decorator>
 </decorators>
