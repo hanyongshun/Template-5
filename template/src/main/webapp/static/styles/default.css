@@ -18,3 +18,25 @@
 }
 
 #footer a {color: #999;}
+
+.dataTables_paginate {
+    padding: 5px;
+    text-align: right;
+}
+.dataTables_paginate a {
+    background: #FFFFFF;
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    margin-right: 5px;
+    padding: 2px 6px;
+    border: 1px solid #D3D3D3;
+    color: #333;
+    font-weight: normal;
+}
+.dataTables_paginate .ui-state-disabled {
+    color: #B4B4B4;
+}
+.dataTables_paginate span .ui-state-disabled {
+    background: #5E626B;
+    color: #fff;
+}

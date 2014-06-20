@@ -1,27 +1,26 @@
 package yy.orz.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 
 /**
  * Created by YYOrz on 14-5-13.
  */
-@Service
-public abstract class BaseService<T> {
+public abstract class BaseService {
 
-    @Autowired
-    protected JpaRepository<T, Long> repository;
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    public T findOne(Long id) {
-        return repository.findOne(id);
+    protected PageRequest buildPageRequest(int pageNumber, int pageSize) {
+        Sort sort;
+        sort = new Sort(Sort.Direction.DESC, "id");
+
+        return new PageRequest(pageNumber - 1, pageSize, sort);
     }
 
-    public void delete(Long id) {
-        repository.delete(id);
-    }
+    protected PageRequest buildPageRequest(int pageNumber, int pageSize, Sort sort) {
 
-    public void saveOrUpdate(T o) {
-        repository.save(o);
+        return new PageRequest(pageNumber - 1, pageSize, sort);
     }
 }
