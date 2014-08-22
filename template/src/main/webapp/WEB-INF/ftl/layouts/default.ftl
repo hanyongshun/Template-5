@@ -22,7 +22,7 @@
 <body>
 	<div class="container">
 	<#include "header.ftl"/>
-		<div id="content">
+		<div id="content" style="width: 1200px">
 		${body}
 		</div>
 	<#include "footer.ftl"/>
