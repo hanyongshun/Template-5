@@ -8,7 +8,7 @@
 <meta http-equiv="Expires" content="0" />
 
 <link type="image/x-icon" href="${ctx!''}/static/images/favicon.ico" rel="shortcut icon">
-<link href="${ctx!''}/static/bootstrap/2.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link href="${ctx!''}/static/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
 <link href="${ctx!''}/static/jquery-validation/1.11.1/validate.css" type="text/css" rel="stylesheet" />
 <link href="${ctx!''}/static/styles/default.css" type="text/css" rel="stylesheet" />
 <script src="${ctx!''}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
@@ -19,14 +19,12 @@
 
 </head>
 
-<body>
+<body style="padding-top: 20px;">
 	<div class="container">
 	<#include "header.ftl"/>
-		<div id="content" style="width: 1200px">
 		${body}
-		</div>
-	<#include "footer.ftl"/>
 	</div>
-	<script src="${ctx!''}/static/bootstrap/2.3.2/js/bootstrap.min.js" type="text/javascript"></script>
+<#include "footer.ftl"/>
+	<script src="${ctx!''}/static/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>

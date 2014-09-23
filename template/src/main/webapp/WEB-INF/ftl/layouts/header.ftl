@@ -1,25 +1,38 @@
-<div id="header">
-    <div id="title">
-        <h1>Backoffice
-            <div class="btn-group pull-right">
-                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="icon-user"></i>
-                    <span class="caret"></span>
-                </a>
-
-                <ul class="dropdown-menu">
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="${ctx!'#'}">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="${ctx!''}/manager">列表1</a></li>
+                <#--<li class="active"><a href="#">Link</a></li>-->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <#--<li class="active"><a href="./">Default</a></li>-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Hi,Admin <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
                         <li><a href="${ctx!''}/admin/user">Admin Users</a></li>
                         <li class="divider"></li>
-                    <li><a href="${ctx!''}/api">APIs</a></li>
-                    <li><a href="${ctx!''}/profile">Edit Profile</a></li>
-                    <li><a href="${ctx!''}/logout">Logout</a></li>
-                </ul>
-            </div>
-        </h1>
-    </div>
-    <div id="" class="nav-collapse navbar-inner navbar ">
-        <ul id="" class="nav _hover">
-            <li><a href="${ctx!''}/manager">列表1</a></li>
-        </ul>
-    </div>
-</div>
+                        <li><a href="${ctx!''}/profile">Edit Profile</a></li>
+                        <li><a href="${ctx!''}/logout">Logout</a></li>
+                        <#--<li><a href="#">Action</a></li>-->
+                        <#--<li><a href="#">Another action</a></li>-->
+                        <#--<li><a href="#">Something else here</a></li>-->
+                        <#--<li class="divider"></li>-->
+                        <#--<li class="dropdown-header">Nav header</li>-->
+                        <#--<li><a href="#">Separated link</a></li>-->
+                        <#--<li><a href="#">One more separated link</a></li>-->
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
