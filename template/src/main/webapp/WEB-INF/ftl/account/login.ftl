@@ -23,9 +23,9 @@
 <body style="padding-top: 40px;padding-bottom: 40px;background-color: #eee;">
 <div class="container">
 <#if error??>
-    <div class="alert alert-error input-medium controls">
-        <button class="close" data-dismiss="alert">×</button>
-        登录失败，请重试.
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <strong>Warning!</strong> ${error}.
     </div>
 </#if>
     <form id="loginForm" class="form-signin" action="${ctx!''}/login" method="post">
@@ -34,7 +34,7 @@
         <input type="password" id="password" name="password" class="form-control" placeholder="密码" required="">
         <div class="checkbox">
             <label>
-                <input type="checkbox" value="remember-me" name="rememberMe"> Remember me
+                <input type="checkbox" name="rememberMe"> Remember me
             </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>

@@ -5,8 +5,10 @@
 
 <body>
 <#if message??>
-<div id="message" class="alert alert-success">
-    <button data-dismiss="alert" class="close">×</button>${message}</div>
+<div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <strong>Info!</strong> ${message}
+</div>
 </#if>
 
 <table id="contentTable" class="table table-striped table-bordered table-condensed">
