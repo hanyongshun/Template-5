@@ -14,7 +14,7 @@ public class SearchFilter {
 	public static final String JOIN_SEPARATOR = "_JOIN_";
 
 	public enum Operator {
-		EQ, LIKE, GT, LT, GTE, LTE, AT, NAT, IN, ILIKE
+		EQ, LIKE, GT, LT, GTE, LTE, AT, NAT, IN, ILIKE, NEQ, NIN
 	}
 
 	public String fieldName;

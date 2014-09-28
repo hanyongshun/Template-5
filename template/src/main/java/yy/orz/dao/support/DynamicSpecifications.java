@@ -1,7 +1,7 @@
 package yy.orz.dao.support;
 
 import com.google.common.collect.Lists;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.*;
@@ -19,7 +19,7 @@ public class DynamicSpecifications {
 					for (SearchFilter filter : filters) {
 						boolean multiProperty = StringUtils.contains(filter.fieldName, SearchFilter.OR_SEPARATOR);
 						if(multiProperty) {
-							String[] fieldNames = StringUtils.split(filter.fieldName, SearchFilter.OR_SEPARATOR);
+							String[] fieldNames = StringUtils.split(filter.fieldName,SearchFilter.OR_SEPARATOR);
 							List<Predicate> orPredicates = Lists.newArrayList();
 							for(String fieldName : fieldNames) {
 								orPredicates.add(buildPredicate(fieldName, filter.value, filter.operator, root, builder));
@@ -55,6 +55,9 @@ public class DynamicSpecifications {
 				case EQ:
 					predicate = builder.equal(expression, value);
 					break;
+                case NEQ:
+                    predicate = builder.notEqual(expression, value);
+                    break;
 				case LIKE:
 					predicate = builder.like(expression, "%" + value + "%");
 					break;
@@ -72,6 +75,9 @@ public class DynamicSpecifications {
 					break;
 				case IN:
 					predicate = expression.in((List) value);
+                    break;
+                case NIN:
+                    predicate = builder.not(expression.in((List) value));
 				default:
 					break;
 				}
